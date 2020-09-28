@@ -252,7 +252,23 @@ function magic()
 		document.getElementById('nob5-1').onclick=function() { step5(); };
 
 	}
+<<<<<<< Updated upstream
 	else if (simsubscreennum==6)
+=======
+
+	else if (simsubscreennum==9)
+	{
+		document.getElementById('canvas8_img1').style.visibility="hidden";
+		document.getElementById('weight6').style.visibility="hidden";
+		document.getElementById('canvas8_img1').style.visibility="hidden";
+		document.getElementById('canvas8').style.visibility="hidden";
+	document.getElementById('question7').style.visibility="hidden";
+
+	}
+
+/*	
+	else if (simsubscreennum==9)
+>>>>>>> Stashed changes
 	{
 		refresh1();
 		document.getElementById('k5').style.visibility="hidden";
@@ -455,11 +471,20 @@ function step23()
 function step3()
 {
 	myStopFunction();
+<<<<<<< Updated upstream
 	document.getElementById('nob3-1').style.visibility="hidden";
 	document.getElementById('nob3-2').style.visibility="visible";
 	document.getElementById("nob3-2").onclick="";
 	setTimeout(function(){
    document.getElementById('hand3').style.visibility="visible";
+=======
+	document.getElementById('question2').style.visibility="hidden";
+	document.getElementById('weight2').style.left="460px";
+	document.getElementById('weight2').style.top="272px";
+	
+	document.getElementById('canvas4_img1').style.visibility="hidden";
+	document.getElementById('canvas4_img2').style.visibility="visible";
+>>>>>>> Stashed changes
 	myInt = setInterval(function(){ animatearrow(); }, 500);
     document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 420px; top: 190px; height: 40px; z-index: 10;";
 
@@ -510,6 +535,7 @@ function step31()
 
 function step32()
 {
+<<<<<<< Updated upstream
      myStopFunction();
 	 document.getElementById('nob3-2').style.visibility="hidden";
 	 document.getElementById('nob3-3').style.visibility="visible";
@@ -518,6 +544,16 @@ function step32()
 	{
 		 myInt = setInterval(function(){ animatearrow(); }, 500);
 		document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 190px; top: 300px; height: 40px; z-index: 10;";
+=======
+	myStopFunction();
+	document.getElementById('question3').style.visibility="hidden";
+	document.getElementById('weight3').style.left="480px";
+	document.getElementById('weight3').style.top="272px";
+	document.getElementById('canvas5_img1').style.visibility="hidden";
+	document.getElementById('canvas5_img2').style.visibility="visible";
+	myInt = setInterval(function(){ animatearrow(); }, 500);
+    document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 60px; top: 200px; height: 40px; z-index: 10;";
+>>>>>>> Stashed changes
 
 		document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
 		// Code for IE9
@@ -526,7 +562,17 @@ function step32()
 		document.getElementById("arrow1").style.transform = "rotate(180deg)";
 		document.getElementById('cflask3').onclick=function() { step33(); };
 
+<<<<<<< Updated upstream
     }, 1300);
+=======
+function step5_1()
+{
+	myStopFunction();
+	document.getElementById('canvas5_img2').style.visibility="hidden";
+	document.getElementById('canvas5_img1').style.visibility="visible";
+	
+	document.getElementById('question4').style.visibility="visible";
+>>>>>>> Stashed changes
 }
 
 function step33()
@@ -568,11 +614,19 @@ function step33()
 function step4()
 {
 	myStopFunction();
+<<<<<<< Updated upstream
 	document.getElementById('nob4-1').style.visibility="hidden";
 	document.getElementById('nob4-2').style.visibility="visible";
 	document.getElementById("nob4-2").onclick="";
 	setTimeout(function(){
    document.getElementById('hand4').style.visibility="visible";
+=======
+	document.getElementById('question4').style.visibility="hidden";
+	document.getElementById('weight4').style.left="440px";
+	document.getElementById('weight4').style.top="272px";
+	document.getElementById('canvas6_img1').style.visibility="hidden";
+	document.getElementById('canvas6_img2').style.visibility="visible";
+>>>>>>> Stashed changes
 	myInt = setInterval(function(){ animatearrow(); }, 500);
     document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 420px; top: 190px; height: 40px; z-index: 10;";
 
@@ -589,6 +643,7 @@ function step4()
 function step41()
 {
 	myStopFunction();
+<<<<<<< Updated upstream
 	document.getElementById('hand4').style.transformOrigin = "100% 80%";
 	document.getElementById('hand4').style.animation = "valveturn-4 1.5s forwards ";
 	setTimeout(function()
@@ -599,6 +654,13 @@ function step41()
 	     document.getElementById('kero4-2').style.visibility="visible";
 	     document.getElementById('kero4-2').style.animation = "water-5 1.8s 1 forwards";
 	},500);
+=======
+	document.getElementById('canvas6_img2').style.visibility="hidden";
+	document.getElementById('canvas6_img1').style.visibility="visible";
+	
+	document.getElementById('question5').style.visibility="visible";
+}
+>>>>>>> Stashed changes
 
 	setTimeout(function()
 	{
@@ -620,6 +682,7 @@ function step41()
 
 function step42()
 {
+<<<<<<< Updated upstream
         myStopFunction();
 		document.getElementById('nob4-2').style.visibility="hidden";
 		document.getElementById('nob4-3').style.visibility="visible";
@@ -628,6 +691,16 @@ function step42()
 		{
 		myInt = setInterval(function(){ animatearrow(); }, 500);
 		document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 190px; top: 300px; height: 40px; z-index: 10;";
+=======
+	myStopFunction();
+	document.getElementById('question5').style.visibility="hidden";
+	document.getElementById('weight5').style.left="460px";
+	document.getElementById('weight5').style.top="272px";
+	document.getElementById('canvas7_img1').style.visibility="hidden";
+	document.getElementById('canvas7_img2').style.visibility="visible";
+	myInt = setInterval(function(){ animatearrow(); }, 500);
+    document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 60px; top: 200px; height: 40px; z-index: 10;";
+>>>>>>> Stashed changes
 
 		document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
 		// Code for IE9
@@ -642,8 +715,16 @@ function step42()
 function step43()
 {
 	myStopFunction();
+<<<<<<< Updated upstream
 	document.getElementById('flask4').style.visibility="hidden";
 		document.getElementById('cflask4').style.visibility="hidden";
+=======
+	document.getElementById('canvas7_img2').style.visibility="hidden";
+	document.getElementById('canvas7_img1').style.visibility="visible";
+	
+	document.getElementById('question6').style.visibility="visible";
+}
+>>>>>>> Stashed changes
 
 	document.getElementById('nob4-3').style.visibility="hidden";
 	document.getElementById('kero4-2').style.visibility="hidden";
