@@ -10,13 +10,7 @@ var values=[[125.3,188.3,394.7,347.7,63.00,407.5,0.79,3.111],
 			[125.3,189.8,396.1,347.7,64.5,407.5,0.79,3.165],
 			[125.3,190,396.5,347.7,64.7,407.5,0.79,3.215]];
 
-p1=Math.floor(Math.random()*(5));
-p2=Math.floor(Math.random()*(5));
-p3=Math.floor(Math.random()*(5));
-p4=Math.floor(Math.random()*(5));
-p5=Math.floor(Math.random()*(5));
-p6=Math.floor(Math.random()*(5));
-
+p=Math.floor(Math.random()*(4));
 
 function navNext()
 {
@@ -31,8 +25,8 @@ function navNext()
  magic();
 }
 
+
 var ca;
-<<<<<<< Updated upstream
 var questions=["Capacity of Le-Chatelier Flask used for determining</br> Specific Gravity of Cement is",
 				"The amount of cement taken is calculated as ",
 				"Care should be taken for the Kerosene to be free from water.",
@@ -100,12 +94,6 @@ function imageZoom(imgID, resultID) {
     return {x : x, y : y};
   }
 }
-=======
-var questions=["The initial reading of the spring balance is",
-				"The reading of the spring balance is"];
-				
-var options2=[["0.6","0.3","0.7","0.2"]]
->>>>>>> Stashed changes
 			  
 function validateAnswer(qn,ans,left,top)
 {
@@ -117,7 +105,7 @@ function validateAnswer(qn,ans,left,top)
 	el.textContent = " ";
 	el.value = " ";
 	answer.appendChild(el);
-  
+
 	for(j=0;j<options2[qn].length;j++)
 	{
 		opt = options2[qn][j];
@@ -145,9 +133,6 @@ function validateAnswer(qn,ans,left,top)
 		});
 	}
 }
-
-
-
 
 //-----------------------------------------blink arrow on the next step---------------------------------------------
 //blink arrow on the next step
@@ -337,7 +322,16 @@ function magic()
 	function step2()
 {
 	myStopFunction();
-	validateAnswer(0,0,"320px","100px");
+	if(document.getElementById('myList').value == 2)
+		{
+			document.getElementById('Answer').textContent="Correct Answer!";
+			document.getElementById('nextButton').style.visibility="visible";
+		}
+	else
+	{
+		document.getElementById('Answer').textContent="Incorrect Answer!";
+	}
+
 }
 
 function step3()
