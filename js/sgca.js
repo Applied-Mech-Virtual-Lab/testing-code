@@ -160,22 +160,8 @@ function magic()
 	else if (simsubscreennum==4)
 	{
 		document.getElementById('canvas3_img1').style.visibility="hidden";
-		document.getElementById('canvas4_img1').style.visibility="visible";
-
-		document.getElementById('nextButton').style.visibility="hidden";
-		document.getElementById('weight2').style.visibility="visible";
-		document.getElementById('arrow1').style.visibility="visible";
-		myInt = setInterval(function(){ animatearrow(); }, 500);
-		document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 480px; top: 270px; height: 40px; z-index: 10;";
-
-		document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
-		// Code for IE9
-		document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
-		// Standard syntax
-		document.getElementById("arrow1").style.transform = "rotate(270deg)";
-
-
-		document.getElementById('weight2').onclick=function() { step4(); };
+		document.getElementById('canvas4_txt1').innerHTML='Click on the Weight to move it to a different location';
+		step4()
 	}
 	else if (simsubscreennum==5)
 	{
@@ -387,20 +373,53 @@ function step3_2()
 	document.getElementById('canvas3_txt2').innerHTML="Load applied on lever = 1kg <br> Distance from center of Lever = 42 <br> Recorded Readings on Spring = xyz N";
 	document.getElementById('nextButton').style.visibility="visible";
 }
+function step4()
+{
+	myStopFunction();
+	document.getElementById('weight3').style.left="510px";
+	document.getElementById('weight3').style.top="325px";
 
+	document.getElementById('canvas4_img1').style.visibility="visible";
+	document.getElementById('canvas4_img2').style.visibility="hidden";
+	myInt = setInterval(function(){ animatearrow(); }, 500);
+    document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 549px; top: 320px; height: 40px; z-index: 10;";
+
+    document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+		// Code for IE9
+    document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+		// Standard syntax
+	document.getElementById("arrow1").style.transform = "rotate(270deg)";
+
+	document.getElementById('weight3').onclick=function() { step4_1(); };
+}
+
+function step4_1()
+{
+	myStopFunction();
+	document.getElementById('canvas4_img1').style.visibility="hidden";
+	document.getElementById('canvas4_img2').style.visibility="visible";
+	document.getElementById('weight3').style.left = "520px";
+
+	document.getElementById('canvas4_txt1').innerHTML="Tighten the Screw to Align the bar horizontally";
+	document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 80px; top: 245px; height: 40px; z-index: 10;";
+
+	myInt = setInterval(function(){ animatearrow(); }, 500);
+
+	document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
+	// Code for IE9
+	document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
+	// Standard syntax
+	document.getElementById("arrow1").style.transform = "rotate(180deg)";
+	document.getElementById('canvas4_img2').onclick=function() { step4_2(); };
+}
 
 function step4_2()
 {
-	myStopFunction()
-	if(document.getElementById('myList3').value == 3)
-	{
-		document.getElementById('Answer3').textContent="Correct Answer!";
-		document.getElementById('nextButton').style.visibility="visible";
-	}
-else
-{
-	document.getElementById('Answer3').textContent="Incorrect Answer!";
-}
+	myStopFunction();
+	document.getElementById('canvas4_img2').style.visibility = "hidden";
+	document.getElementById('canvas4_img1').style.visibility = "visible";
+	document.getElementById('canvas4_txt2').innerHTML="Load applied on lever = 1kg <br> Distance from center of Lever = 42 <br> Recorded Readings on Spring = xyz N";
+	document.getElementById('nextButton').style.visibility="visible";
 }
 
 
