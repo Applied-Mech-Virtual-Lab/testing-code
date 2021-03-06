@@ -4,40 +4,16 @@ var mpointer=0;
 var repeat =0;
 var a,p,lastp,n,b,q,flag=0,avg,average;
 
-var values1=[[2.5,2.381],
-	        [2.4,-2.738],
-			[2.4,-2.738],
-			[2.6,7.500],
-			[2.5,2.381]];
-var values2=[[3.0,7.500],
-		    [2.9,3.200],
-			[2.8,-1.100],
-			[2.9,3.200],
-			[2.7,-5.400]];
-var values3=[[3.5,4.032],
-			[3.3,-2.903],
-			[3.2,-6.371],
-			[3.5,4.032],
-			[3.4,0.564]];
-var values4=[[4.5,2.381],
-			[4.4,-0.179],
-			[4.2,-5.298],
-			[4.1,-7.857],
-			[4.3,-2.738]];
-var values5=[[5.4,5.350],
-			[4.9,-5.400],
-			[4.8,-7.550],
-			[5.1,-1.100],
-			[5.0,-3.250]];
-var values6=[[6.0,-4.637],
-			[5.9,-6.371],
-			[6.2,-6.169],
-			[6.1,-2.903],
-			[6.6,5.755]];
+var values=[
+	[1, 42, 42, 2.5, 2.381, 1, 50, 50, 3, 7.5, 1, 62, 62, 3.5, 4.032, 2, 42, 84, 4.5, 2.381, 2, 50, 100, 5.4, 5.350, 2, 62, 124, 6, -4.637],
+	[1, 42, 42, 2.4, -2.738, 1, 50, 50, 2.9, 3.2, 1, 62, 62, 3.3, -2.903, 2, 42, 84, 4.5, -7.857, 2, 50, 100, 4.9, -5.400, 2, 62, 124, 5.9, -6.371],
+	[1, 42, 42, 2.4, 2.738, 1, 50, 50, 2.8, -1.1, 1, 62, 62, 3.2, -6.371, 2, 42, 84, 4.2, -5.298, 2, 50, 100, 4.8, -7.55, 2, 62, 124, 6.2, -1.169],	
+	[1, 42, 42, 2.6, 7.5, 1, 50, 50, 2.9, 3.2, 1, 62, 62, 3.5, -4.032, 2, 42, 84, 4.1, -7.857, 2, 50, 100, 4.9, -5.400, 2, 62, 124, 6.1, -2.903],
+	[1, 42, 42, 2.5, 2.381, 1, 50, 50, 2.9, 3.2, 1, 62, 62, 3.3, -2.903, 2, 42, 84, 4.3, -2.738, 2, 50, 100, 5.4, 5.350, 2, 62, 124, 6.6, 5.766]	
+];
 
 
-
-p=Math.floor(Math.random()*(4));
+p=Math.floor(Math.random()*(5));
 
 function navNext()
 {
@@ -190,39 +166,27 @@ function magic()
 
 	else if (simsubscreennum==8)
 	{
-		document.getElementById('weight5').style.visibility="hidden";
 		document.getElementById('canvas7_img1').style.visibility="hidden";
-		document.getElementById('canvas8_img1').style.visibility="visible";
+		table = document.getElementById("results")
+		for (var i = 2; i<=7; i++)
+		{
+			table.rows[i].cells[1].innerHTML = Math.round((values[p][5*(i-2)])*10)/10
+			table.rows[i].cells[2].innerHTML = Math.round((values[p][5*(i-2)+1])*10)/10
+			table.rows[i].cells[3].innerHTML = Math.round((values[p][5*(i-2)+2])*10)/10
+			table.rows[i].cells[4].innerHTML = 0.5
+			table.rows[i].cells[5].innerHTML = Math.round((values[p][5*(i-2)+3])*10)/10
+			table.rows[i].cells[6].innerHTML = Math.round((values[p][5*(i-2)+3] - 0.5)*10)/10
+			table.rows[i].cells[7].innerHTML = 21.5
+			table.rows[i].cells[8].innerHTML = Math.round(((values[p][5*(i-2)+3] - 0.5) * 21.5)*10)/10
+			table.rows[i].cells[9].innerHTML = Math.round(((values[p][5*(i-2)+3] - 0.5) * 21.5 - values[p][5*(i-2)+2])*10)/10
+			table.rows[i].cells[10].innerHTML = Math.round((values[p][5*(i-2)+4])*100)/100
 
-		document.getElementById('nextButton').style.visibility="hidden";
-		document.getElementById('weight6').style.visibility="visible";
-		document.getElementById('arrow1').style.visibility="visible";
-		myInt = setInterval(function(){ animatearrow(); }, 500);
-		document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 500px; top: 270px; height: 40px; z-index: 10;";
 
-		document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
-		// Code for IE9
-		document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
-		// Standard syntax
-		document.getElementById("arrow1").style.transform = "rotate(270deg)";
-
-
-		document.getElementById('weight6').onclick=function() { step8(); };
-
-	}
-
-	else if (simsubscreennum==9)
-	{
-		document.getElementById('canvas8_img1').style.visibility="hidden";
-		document.getElementById('weight6').style.visibility="hidden";
-		document.getElementById('canvas8_img1').style.visibility="hidden";
-		document.getElementById('canvas8').style.visibility="hidden";
-	document.getElementById('question7').style.visibility="hidden";
-
+		}
 
 	}
 
-}
+	}
 
 function step1()
 {
@@ -277,7 +241,7 @@ function step2_2()
 	myStopFunction();
 	document.getElementById('canvas2_img2').style.visibility="hidden";
 	document.getElementById('canvas2_img1').style.visibility="visible";
-	document.getElementById('canvas2_txt2').innerHTML="Load applied on lever = 1kg <br> Distance from center of Lever = 42 <br> Recorded Readings on Spring = xyz N";
+	document.getElementById('canvas2_txt2').innerHTML="Load applied on lever = " + values[p][0] + "<br> Distance from center of Lever = " + values[p][1] + "<br> Recorded Readings on Spring = " + values[p][3];
 	document.getElementById('nextButton').style.visibility="visible";
 }
 
@@ -326,7 +290,7 @@ function step3_2()
 	myStopFunction();
 	document.getElementById('canvas3_img2').style.visibility = "hidden";
 	document.getElementById('canvas3_img1').style.visibility = "visible";
-	document.getElementById('canvas3_txt2').innerHTML="Load applied on lever = 1kg <br> Distance from center of Lever = 42 <br> Recorded Readings on Spring = xyz N";
+	document.getElementById('canvas3_txt2').innerHTML="Load applied on lever = " + values[p][5] + "<br> Distance from center of Lever = " + values[p][6] + "<br> Recorded Readings on Spring = " + values[p][8];
 	document.getElementById('nextButton').style.visibility="visible";
 }
 function step4()
@@ -374,7 +338,7 @@ function step4_2()
 	myStopFunction();
 	document.getElementById('canvas4_img2').style.visibility = "hidden";
 	document.getElementById('canvas4_img1').style.visibility = "visible";
-	document.getElementById('canvas4_txt2').innerHTML="Load applied on lever = 1kg <br> Distance from center of Lever = 42 <br> Recorded Readings on Spring = xyz N";
+	document.getElementById('canvas4_txt2').innerHTML="Load applied on lever = " + values[p][10] + "<br> Distance from center of Lever = " + values[p][11] + "<br> Recorded Readings on Spring = " + values[p][13];	
 	document.getElementById('nextButton').style.visibility="visible";
 }
 
@@ -422,7 +386,7 @@ function step5_2()
 	myStopFunction();
 	document.getElementById('canvas5_img2').style.visibility="hidden";
 	document.getElementById('canvas5_img1').style.visibility="visible";
-	document.getElementById('canvas5_txt2').innerHTML="Load applied on lever = 1kg <br> Distance from center of Lever = 42 <br> Recorded Readings on Spring = xyz N";
+	document.getElementById('canvas5_txt2').innerHTML="Load applied on lever = " + values[p][15] + "<br> Distance from center of Lever = " + values[p][16] + "<br> Recorded Readings on Spring = " + values[p][18];	
 	document.getElementById('nextButton').style.visibility="visible";
 }
 
@@ -471,7 +435,7 @@ function step6_2()
 	myStopFunction();
 	document.getElementById('canvas6_img2').style.visibility = "hidden";
 	document.getElementById('canvas6_img1').style.visibility = "visible";
-	document.getElementById('canvas6_txt2').innerHTML="Load applied on lever = 1kg <br> Distance from center of Lever = 42 <br> Recorded Readings on Spring = xyz N";
+	document.getElementById('canvas6_txt2').innerHTML="Load applied on lever = " + values[p][20] + "<br> Distance from center of Lever = " + values[p][21] + "<br> Recorded Readings on Spring = " + values[p][23];	
 	document.getElementById('nextButton').style.visibility="visible";
 }
 
@@ -520,7 +484,7 @@ function step7_2()
 	myStopFunction();
 	document.getElementById('canvas7_img2').style.visibility = "hidden";
 	document.getElementById('canvas7_img1').style.visibility = "visible";
-	document.getElementById('canvas7_txt2').innerHTML="Load applied on lever = 1kg <br> Distance from center of Lever = 42 <br> Recorded Readings on Spring = xyz N";
+	document.getElementById('canvas7_txt2').innerHTML="Load applied on lever = " + values[p][25] + "<br> Distance from center of Lever = " + values[p][26] + "<br> Recorded Readings on Spring = " + values[p][28];	
 	document.getElementById('nextButton').style.visibility="visible";
 }
 

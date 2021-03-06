@@ -97,7 +97,7 @@ th, td {
          <p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px; color: red;"> Click on the screw to tighten the string and bring the arm to correct position</p>
          <img id="canvas1_img1" style="position: absolute; left: 80px; top: 150px; width:600px; height:272px;cursor:move" src="Images/canvas1_1.png">
          <img id="canvas1_img2" style="position: absolute; left: 80px; top: 150px; width:600px; height:272px;visibility:hidden;" src="Images/canvas1_2.png">
-         <p id="canvas1_txt1" style="visibility:hidden; position: absolute; left: 490px; top: 431px; width:600px;"  class="steptext" style="font-family:verdana; font-size:14px;">Recorded Initial Value is: </p>
+         <p id="canvas1_txt1" style="visibility:hidden; position: absolute; left: 490px; top: 431px; width:600px;"  class="steptext" style="font-family:verdana; font-size:14px;">Recorded Initial Value is: 0.5N </p>
       </div>
 
       <!--Step2	-->
@@ -203,113 +203,113 @@ th, td {
          <img id="weight6" style="position: absolute; left: 510px; top: 325px; width: 20px; height: 60px;" src="Images/Weight.png">
       </div>
 
+      <!-- Results  -->
+      <div class="simsubscreen" id="canvas8" style="visibility:hidden">
+         <strong class="incanvas" style="font-size: larger;">OBSERVATIONS </strong>
 
-            <div class="simsubscreen" id="canvas8" style="visibility:hidden">
-               <strong class="incanvas" style="font-size: larger;">OBSERVATIONS </strong>
-
-               <table id="table" border=1 style="text-align:center; width:600px; position: absolute; left: -12px; top: 80px;">
-                  <tr>
-                     <th rowspan="2">  S.No.  </th>
-                     <th rowspan="2">  Weight <br> W(kg)  </th>
-                     <th rowspan="2">  Distance from <br> Fulcrum x(cm)  </th>
-                     <th rowspan="2">  M1 = <br> Wx  (kgcm)  </th>
-                     <th colspan="2">  Reading of Spring Balance T (kg)  </th>
-                     <th rowspan="2">  Effort (kg) <br> T = T1 - T2  </th>
-                     <th rowspan="2">  Distance <br> Y(cm)  </th>
-                     <th rowspan="2">  M2 = T*Y <br> kg cm  </th>
-                     <th rowspan="2">  M2 - M1  </th>
-                     <th rowspan="2">  Percentage <br> Error  </th>
-                  </tr>
-                  <tr>
-                     <th>  Initial T1  </th>
-                     <th>  Final T2  </th>
-                  </tr>
-                  <!--1-->
-                  <tr>
-                     <td>1</td>
-                     <td>1</td>
-                     <td>42</td>
-                     <td>42</td>
-                     <td>1.5</td>
-                     <td>1.5</td>
-                     <td>1</td>
-                     <td>21.5</td>
-                     <td>21.5</td>
-                     <td>0.5</td>
-                     <td>2.3</td>
-                  </tr>
-                  <!--2-->
-                  <tr>
-                     <td>2</td>
-                     <td>1</td>
-                     <td>50</td>
-                     <td>50</td>
-                     <td>1.5</td>
-                     <td>1.5</td>
-                     <td>1</td>
-                     <td>21.5</td>
-                     <td>21.5</td>
-                     <td>0.5</td>
-                     <td>2.3</td>
-                  </tr>
-                  <!--3-->
-                  <tr>
-                     <td>3</td>
-                     <td>1</td>
-                     <td>62</td>
-                     <td>62</td>
-                     <td>1.5</td>
-                     <td>1.5</td>
-                     <td>1</td>
-                     <td>21.5</td>
-                     <td>21.5</td>
-                     <td>0.5</td>
-                     <td>2.3</td>
-                  </tr>
-                  <!--4-->
-                  <tr>
-                     <td>4</td>
-                     <td>2</td>
-                     <td>42</td>
-                     <td>84</td>
-                     <td>1.5</td>
-                     <td>1.5</td>
-                     <td>1</td>
-                     <td>21.5</td>
-                     <td>21.5</td>
-                     <td>0.5</td>
-                     <td>2.3</td>
-                  </tr>
-                  <!--5-->
-                  <tr>
-                     <td>5</td>
-                     <td>2</td>
-                     <td>50</td>
-                     <td>100</td>
-                     <td>1.5</td>
-                     <td>1.5</td>
-                     <td>1</td>
-                     <td>21.5</td>
-                     <td>21.5</td>
-                     <td>0.5</td>
-                     <td>2.3</td>
-                  </tr>
-                  <!--6-->
-                  <tr>
-                     <td>6</td>
-                     <td>2</td>
-                     <td>62</td>
-                     <td>124</td>
-                     <td>1.5</td>
-                     <td>1.5</td>
-                     <td>1</td>
-                     <td>21.5</td>
-                     <td>21.5</td>
-                     <td>0.5</td>
-                     <td>2.3</td>
-                  </tr>
-                  </table>
-               </div>
+         <table id="results" border=1 style="text-align:center; width:600px; position: absolute; left: -31px; top: 80px;">
+            <tr>
+               <th rowspan="2">  S.No.  </th>
+               <th rowspan="2">  Weight <br> W(kg)  </th>
+               <th rowspan="2">  Distance from <br> Fulcrum x(cm)  </th>
+               <th rowspan="2">  M1 = <br> Wx  (kgcm)  </th>
+               <th colspan="2">  Reading of Spring Balance T (kg)  </th>
+               <th rowspan="2">  Effort (kg) <br> T = T1 - T2  </th>
+               <th rowspan="2">  Distance <br> Y(cm)  </th>
+               <th rowspan="2">  M2 = T*Y <br> kg cm  </th>
+               <th rowspan="2">  M2 - M1  </th>
+               <th rowspan="2">  Percentage <br> Error  </th>
+            </tr>
+            <tr>
+               <th>  Initial T1  </th>
+               <th>  Final T2  </th>
+            </tr>
+            <!--1-->
+            <tr>
+               <td>1</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <!--2-->
+            <tr>
+               <td>2</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <!--3-->
+            <tr>
+               <td>3</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <!--4-->
+            <tr>
+               <td>4</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <!--5-->
+            <tr>
+               <td>5</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <!--6-->
+            <tr>
+               <td>6</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+         </table>
+         </div>
 
 
 
