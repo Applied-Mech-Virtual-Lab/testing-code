@@ -135,8 +135,6 @@ function magic()
 
 		myInt = setInterval(function(){ animatearrow(); }, 500);
 
-
-
 		document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
 		// Code for IE9
 		document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
@@ -149,12 +147,12 @@ function magic()
 	{
 		document.getElementById('nextButton').style.visibility="hidden";
 		document.getElementById('canvas1_img2').style.visibility="hidden";
-		document.getElementById('canvas2_img1').style.visibility="visible";
-		validateAnswer(0,0,"100px","420px");
+		document.getElementById('canvas1_txt1').style.visibility="hidden";
+		document.getElementById('canvas2_txt1').innerHTML = "Click on the Weight to add it to the Bell Crank";
+		step3()
 	}
 	else if (simsubscreennum==3)
 	{
-		document.getElementById('canvas2_img1').style.visibility="hidden";
 		step3()
 	}
 	else if (simsubscreennum==4)
@@ -287,9 +285,9 @@ function magic()
 	myStopFunction();
 	document.getElementById('canvas1_img1').style.visibility="hidden";
 	document.getElementById('canvas1_img2').style.visibility="visible";
+	document.getElementById('canvas1_txt1').style.visibility="visible";
  	document.getElementById('nextButton').style.visibility="visible";
 }
-
 
 	function step2()
 {
@@ -309,7 +307,7 @@ function magic()
 function step3()
 {
 	myStopFunction();
-	document.getElementById('canvas3_img1').style.visibility="visible";
+	document.getElementById('canvas2_img1').style.visibility="visible";
 	document.getElementById('weight').style.left="70px";
 	document.getElementById('weight').style.top="380px";
 	document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 50px; top: 450px; height: 40px; z-index: 10;";
@@ -329,8 +327,9 @@ function step3_1()
 	myStopFunction();
 	document.getElementById('weight').style.left="500px";
 	document.getElementById('weight').style.top="325px";
-	document.getElementById('canvas3_img1').style.visibility="hidden";
-	document.getElementById('canvas3_img2').style.visibility="visible";
+	document.getElementById('canvas2_txt1').innerHTML="Tighten the Screw to Align the bar horizontally";
+	document.getElementById('canvas2_img1').style.visibility="hidden";
+	document.getElementById('canvas2_img2').style.visibility="visible";
 
 	document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 80px; top: 245px; height: 40px; z-index: 10;";
 
@@ -341,26 +340,16 @@ function step3_1()
 	document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
 	// Standard syntax
 	document.getElementById("arrow1").style.transform = "rotate(180deg)";
-	document.getElementById('canvas3_img2').onclick=function() { step3_2(); };
+	document.getElementById('canvas2_img2').onclick=function() { step3_2(); };
 }
 
 function step3_2()
 {
 	myStopFunction();
-	document.getElementById('canvas3_img2').style.visibility="hidden";
-	document.getElementById('canvas3_img1').style.visibility="visible";
-	step3_3()
-}
-
-function step3_3()
-{
-	document.getElementById('canvas3_img1').style.left="50px";
-	document.getElementById('canvas3_img1').style.top="100px";
-	document.getElementById('weight').style.left="440px";
-	document.getElementById('weight').style.top="270px";
-	document.getElementById('question2').style.visibility="visible";
-	
-
+	document.getElementById('canvas2_img2').style.visibility="hidden";
+	document.getElementById('canvas2_img1').style.visibility="visible";
+	document.getElementById('canvas2_txt2').innerHTML="Load applied on lever = 1kg <br> Distance from center of Lever = 42 <br> Recorded Readings on Spring = xyz N";
+	document.getElementById('nextButton').style.visibility="visible";
 }
 
 function step3_4()
