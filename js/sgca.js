@@ -13,16 +13,20 @@ var values=[
 ];
 
 
+
 p=Math.floor(Math.random()*(5));
+
+total = (values[p][4] + values[p][9] + values[p][14] +  + values[p][19] + values[p][24] + values[p][29])/6
 
 function navNext()
 {
-  for (temp = 0; temp <= 7 ; temp++)
+  for (temp = 0; temp <= 9 ; temp++)
   {
       document.getElementById('canvas'+temp).style.visibility="hidden";
   }
 
  simsubscreennum+=1;
+// simsubscreennum = 9;
  document.getElementById('canvas'+(simsubscreennum)).style.visibility="visible";
  document.getElementById('nextButton').style.visibility="hidden";
  document.getElementById("questDiv").style.visibility="hidden";
@@ -180,10 +184,16 @@ function magic()
 
 
 		}
+		document.getElementById('nextButton').style.visibility="visible";
 
 	}
+	else if(simsubscreennum == 9)
+	{
+		document.getElementById('weight6').style.visibility="hidden";
+		document.getElementById('canvas8_txt1').innerHTML= "Average Percentage Error = " + Math.round(total*100)/100  + "%"
+	} 
 
-	}
+}
 
 function step1()
 {
